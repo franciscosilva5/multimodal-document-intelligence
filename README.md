@@ -4,7 +4,7 @@ An end-to-end AI system for analyzing business documents, extracting structured 
 
 ## Live Demo
 
-Streamlit deployment coming soon.
+https://multimodal-document-intelligence-eqwvanzp5rawtwfgtufgqv.streamlit.app/
 
 ## Overview
 
