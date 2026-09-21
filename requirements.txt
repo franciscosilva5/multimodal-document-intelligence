@@ -1,0 +1,17 @@
+streamlit
+openai
+python-dotenv
+pydantic
+pillow
+pymupdf
+reportlab
+pytest
+%s\n
+streamlit
+openai
+python-dotenv
+pydantic
+pillow
+pymupdf
+reportlab
+pytest
