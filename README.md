@@ -266,7 +266,7 @@ pytest -q
 
 Clone the repository:
 
-git clone https://github.com/Vercetius/multimodal-document-intelligence.git
+git clone https://github.com/franciscosilva5/multimodal-document-intelligence.git
 
 Enter the project:
 
