@@ -245,6 +245,22 @@ pytest -q
 
 ![Clean Transaction](images/app/clean-transaction.png)
 
+## Design Decisions and Trade-offs
+
+The system separates document extraction from validation and risk assessment so that extracted information is not automatically treated as trusted business data.
+
+**Multimodal extraction is used for document understanding.** Financial checks, cross-document matching, duplicate detection, and risk routing are handled separately. This makes downstream decisions easier to inspect even when extraction depends on an external model.
+
+**Financial validation is deterministic.** Totals, quantities, tax values, and consistency checks use explicit logic rather than model judgment. This improves reproducibility but requires predefined validation rules.
+
+**Cross-document matching exposes individual discrepancies** instead of returning only a final score. This makes the result more auditable.
+
+**Duplicate detection uses weighted similarity.** Fields such as document number, supplier, total, date, and purchase-order reference can contribute differently to the result. The weights are transparent but manually designed for this prototype.
+
+**Risk scoring is explainable rather than learned.** Each issue contributes visibly to the final risk score. A learned risk model could capture more complex patterns, but would require a much larger labeled dataset and proper calibration.
+
+**Human review is used for higher-risk transactions.** The system provides decision support rather than automatically approving or rejecting financial documents.
+
 ## Project Structure
 
 - app/app.py — Streamlit application
